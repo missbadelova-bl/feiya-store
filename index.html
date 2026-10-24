@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FEIYA Store — sumkalar, taqinchoqlar, aksessuarlar</title>
+<meta name="description" content="Ayollar uchun sumkalar, taqinchoqlar, aksessuarlar va kosmetika. Uzum orqali tez yetkazib berish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --accent:#4A1D3F; --ink:#2A1F27; --muted:#5A4B55; --soft:#F8ECEA; --line:#EFE3E1; --plum:#7A4A6B; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:'Manrope',system-ui,sans-serif; color:var(--ink); background:#fff; }
+  a { color:var(--accent); }
+  .wrap { max-width:1180px; margin:0 auto; padding-left:24px; padding-right:24px; }
+  .serif { font-family:'Playfair Display',Georgia,serif; }
+  .btn { display:inline-flex; align-items:center; min-height:52px; padding:0 28px; border-radius:999px; font-weight:600; font-size:16px; text-decoration:none; }
+  .btn-fill { background:var(--accent); color:#fff; }
+  .btn-line { border:1.5px solid var(--accent); color:var(--accent); }
+
+  header { border-bottom:1px solid var(--line); }
+  .bar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding-top:18px; padding-bottom:18px; }
+  .logo { font-size:26px; font-weight:600; letter-spacing:3px; text-decoration:none; color:var(--accent); }
+  nav { display:flex; flex-wrap:wrap; gap:24px; font-size:15px; font-weight:500; }
+  nav a { color:var(--ink); text-decoration:none; }
+  .bar .btn { min-height:44px; padding:0 20px; font-size:15px; }
+
+  .hero { background:var(--soft); }
+  .hero .wrap { display:flex; flex-wrap:wrap; align-items:center; gap:48px; padding-top:72px; padding-bottom:72px; }
+  .hero-text { flex:1 1 420px; min-width:0; display:flex; flex-direction:column; gap:20px; }
+  .eyebrow { margin:0; font-size:14px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--plum); }
+  h1 { margin:0; font-size:clamp(38px,6vw,56px); line-height:1.08; font-weight:500; }
+  h1 em { color:var(--accent); }
+  .lead { margin:0; font-size:18px; line-height:1.6; color:var(--muted); max-width:520px; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+  .hero-img { flex:1 1 380px; min-width:0; height:440px; border-radius:24px; background:#EBD6D2; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:var(--plum); overflow:hidden; }
+  .hero-img img { width:100%; height:100%; object-fit:cover; }
+
+  section.block { padding-top:72px; padding-bottom:24px; }
+  h2 { margin:0 0 8px; font-size:38px; font-weight:500; }
+  .sub { margin:0 0 32px; font-size:16px; color:var(--muted); }
+  .cats { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px; }
+  .cat { min-height:88px; padding:16px; border-radius:16px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:4px; text-align:left; cursor:pointer; font-family:inherit; background:#fff; color:var(--ink); border:1.5px solid var(--line); }
+  .cat b { font-size:17px; }
+  .cat span { font-size:13px; opacity:.85; }
+  .cat.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  .prod-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:28px; }
+  .prod-head h2 { margin:0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:24px; padding-bottom:72px; }
+  .card { border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; }
+  .card .ph { height:240px; background:var(--soft); display:flex; align-items:center; justify-content:center; color:var(--plum); font-size:14px; font-weight:500; }
+  .card .ph img { width:100%; height:100%; object-fit:cover; }
+  .card .body { padding:18px; display:flex; flex-direction:column; gap:6px; flex-grow:1; }
+  .card .c { font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--plum); }
+  .card h3 { margin:0; font-size:18px; font-weight:600; }
+  .card .price { margin:0 0 10px; font-size:17px; font-weight:700; color:var(--accent); }
+  .card a.buy { margin-top:auto; min-height:44px; border-radius:999px; border:1.5px solid var(--accent); color:var(--accent); font-weight:600; font-size:15px; display:flex; align-items:center; justify-content:center; text-decoration:none; }
+
+  .how { background:#2E0F27; color:#fff; }
+  .how .wrap { padding-top:72px; padding-bottom:72px; }
+  .how h2 { margin-bottom:36px; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+  .steps .n { font-size:44px; color:#F2C9D6; }
+  .steps h3 { margin:6px 0; font-size:19px; font-weight:600; }
+  .steps p { margin:0; font-size:15px; line-height:1.6; color:#E8DCE4; }
+
+  .contacts { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; padding-bottom:72px; }
+  .contacts a { display:flex; flex-direction:column; gap:6px; padding:24px; border-radius:18px; background:var(--soft); color:var(--ink); text-decoration:none; }
+  .contacts small { font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--plum); }
+  .contacts b { font-size:18px; }
+
+  footer { border-top:1px solid var(--line); }
+  footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-top:28px; padding-bottom:28px; font-size:14px; color:var(--muted); }
+  footer .serif { font-size:18px; letter-spacing:2px; color:var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="logo serif">FEIYA</a>
+    <nav aria-label="Asosiy menyu">
+      <a href="#katalog">Katalog</a>
+      <a href="#katalog">Mahsulotlar</a>
+      <a href="#buyurtma">Qanday buyurtma beriladi</a>
+      <a href="#aloqa">Aloqa</a>
+    </nav>
+    <a href="https://go.uzum.uz/l/zBEPBr9S" class="btn btn-fill">Uzumda ochish</a>
+  </div>
+</header>
+
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Sumkalar · Taqinchoqlar · Aksessuarlar</p>
+      <h1 class="serif">Har kuningizga <em>nafis</em> tafsilot</h1>
+      <p class="lead">Ayollar uchun sumkalar, taqinchoqlar, aksessuarlar va kosmetika. Hammasi Uzum orqali tez yetkaziladi.</p>
+      <div class="actions">
+        <a href="https://go.uzum.uz/l/zBEPBr9S" class="btn btn-fill">Uzumdan xarid qilish</a>
+        <a href="#katalog" class="btn btn-line">Mahsulotlarni ko'rish</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <!-- Asosiy rasm qo'shish uchun: rasmni "images" papkasiga soling va quyidagi qatorni yoqing -->
+      <!-- <img src="images/asosiy.jpg" alt="FEIYA Store mahsuloti"> -->
+      <svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>Asosiy rasm shu yerda bo'ladi</span>
+    </div>
+  </div>
+</section>
+
+<section id="katalog" class="wrap block">
+  <h2 class="serif">Katalog</h2>
+  <p class="sub">O'zingizga kerakli bo'limni tanlang</p>
+  <div class="cats" id="cats"></div>
+</section>
+
+<section class="wrap">
+  <div class="prod-head">
+    <h2 class="serif" id="heading">Mashhur mahsulotlar</h2>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="buyurtma" class="how">
+  <div class="wrap">
+    <h2 class="serif">Qanday buyurtma beriladi</h2>
+    <div class="steps">
+      <div><span class="n serif">1</span><h3>Mahsulotni tanlang</h3><p>Saytdan yoki Instagram sahifamizdan yoqqan narsangizni toping.</p></div>
+      <div><span class="n serif">2</span><h3>Uzumda rasmiylashtiring</h3><p>Do'konimiz Uzumda. To'lov va yetkazib berish Uzum orqali xavfsiz bo'ladi.</p></div>
+      <div><span class="n serif">3</span><h3>Topshirish punktidan oling</h3><p>Buyurtmangiz o'zingizga qulay Uzum punktiga yetib keladi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="aloqa" class="wrap block">
+  <h2 class="serif">Aloqa</h2>
+  <p class="sub">Savolingiz bo'lsa, yozing. Tez javob beramiz.</p>
+  <div class="contacts">
+    <a href="https://go.uzum.uz/l/zBEPBr9S"><small>Uzum do'kon</small><b>FEIYA Store</b></a>
+    <a href="https://instagram.com/feiya_accessories_shop"><small>Instagram</small><b>@feiya_accessories_shop</b></a>
+    <a href="https://t.me/feiya92"><small>Telegram</small><b>@feiya92</b></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="serif">FEIYA</span>
+    <span>© 2026 FEIYA Store · Guliston</span>
+  </div>
+</footer>
+
+<script>
+  // ===== MAHSULOTLARNI SHU YERDA O'ZGARTIRASIZ =====
+  // narx: so'mda yozing (masalan 89000). Hali bilmasangiz "" qoldiring.
+  // rasm: "images/sumka1.jpg" kabi. Rasm bo'lmasa "" qoldiring.
+  var MAHSULOTLAR = [
+    { bolim: 'sumka',     nom: "Kuz-qish ayollar sumkasi",    narx: "", rasm: "" },
+    { bolim: 'sumka',     nom: "Kichik yelka sumkasi",        narx: "", rasm: "" },
+    { bolim: 'taqinchoq', nom: "Kumush rangli sirg'a",        narx: "", rasm: "" },
+    { bolim: 'taqinchoq', nom: "Nozik zanjir",                narx: "", rasm: "" },
+    { bolim: 'aksessuar', nom: "Soch to'g'nog'ichi to'plami", narx: "", rasm: "" },
+    { bolim: 'kosmetika', nom: "NOVO kiprik tushi",           narx: "", rasm: "" },
+    { bolim: 'poyabzal',  nom: "Ayollar kuzgi botinkasi",     narx: "", rasm: "" },
+    { bolim: 'aksessuar', nom: "Qo'l bilaguzugi",             narx: "", rasm: "" }
+  ];
+  var UZUM = "https://go.uzum.uz/l/zBEPBr9S";
+
+  var BOLIMLAR = [
+    { id: 'all',       nom: 'Hammasi',      izoh: 'Barcha mahsulotlar' },
+    { id: 'sumka',     nom: 'Sumkalar',     izoh: 'Kundalik va kechki' },
+    { id: 'taqinchoq', nom: 'Taqinchoqlar', izoh: "Sirg'a, uzuk, zanjir" },
+    { id: 'aksessuar', nom: 'Aksessuarlar', izoh: "Soch va qo'l uchun" },
+    { id: 'kosmetika', nom: 'Kosmetika',    izoh: 'Tush, pomada va boshqa' },
+    { id: 'poyabzal',  nom: 'Poyabzal',     izoh: "Kuz-qish to'plami" }
+  ];
+  var tanlangan = 'all';
+
+  function nomi(id) { for (var i = 0; i < BOLIMLAR.length; i++) if (BOLIMLAR[i].id === id) return BOLIMLAR[i].nom; return ''; }
+  function narxYoz(n) { return n ? Number(n).toLocaleString('ru-RU').replace(/,/g, ' ') + " so'm" : "Narxi Uzumda"; }
+
+  function chiz() {
+    var cats = document.getElementById('cats');
+    cats.innerHTML = '';
+    BOLIMLAR.forEach(function (b) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cat' + (b.id === tanlangan ? ' on' : '');
+      btn.setAttribute('aria-pressed', b.id === tanlangan);
+      btn.innerHTML = '<b></b><span></span>';
+      btn.querySelector('b').textContent = b.nom;
+      btn.querySelector('span').textContent = b.izoh;
+      btn.onclick = function () { tanlangan = b.id; chiz(); };
+      cats.appendChild(btn);
+    });
+
+    document.getElementById('heading').textContent = tanlangan === 'all' ? 'Mashhur mahsulotlar' : nomi(tanlangan);
+
+    var grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    MAHSULOTLAR.filter(function (p) { return tanlangan === 'all' || p.bolim === tanlangan; }).forEach(function (p) {
+      var card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = '<div class="ph"></div><div class="body"><span class="c"></span><h3></h3><p class="price"></p><a class="buy">Uzumda ko\'rish</a></div>';
+      var ph = card.querySelector('.ph');
+      if (p.rasm) { var img = document.createElement('img'); img.src = p.rasm; img.alt = p.nom; img.loading = 'lazy'; ph.appendChild(img); }
+      else { ph.textContent = 'Rasm tez orada'; }
+      card.querySelector('.c').textContent = nomi(p.bolim);
+      card.querySelector('h3').textContent = p.nom;
+      card.querySelector('.price').textContent = narxYoz(p.narx);
+      card.querySelector('.buy').href = p.link || UZUM;
+      grid.appendChild(card);
+    });
+  }
+  chiz();
+</script>
+</body>
+</html>
